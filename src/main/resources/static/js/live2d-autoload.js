@@ -846,7 +846,7 @@ function Live2d() {
 
     if (!response.ok) {
       if (response.status === 401) {
-        message.showMessage("请先登录！", 2000, 4);
+        message.showMessage("请先登录哦，喵呜~", 2000, 4);
       } else {
         message.showMessage("对话接口异常了哦～快去联系我的主人吧！", 5000, 4);
       }
