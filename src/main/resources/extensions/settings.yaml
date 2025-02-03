@@ -298,16 +298,12 @@ spec:
               help: 接口地址，国内如果访问不了，可考虑使用 openai-api-proxy
               name: openAiBaseUrl
               validation: required|url
-            - $formkit: select
+            - $formkit: text
               if: "$value.isOpenAi === true"
               name: openAiModel
               label: 模型
               help: 使用的 OpenAi 模型，可在 https://platform.openai.com/docs/models 查看
-              options:
-                - value: gpt-4
-                  label: gpt-4
-                - value: gpt-3.5-turbo
-                  label: gpt-3.5-turbo
+              value: gpt-3.5-turbo
     - group: advanced
       label: 高级设置
       formSchema:
