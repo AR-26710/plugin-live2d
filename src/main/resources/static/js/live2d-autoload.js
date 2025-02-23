@@ -88,8 +88,8 @@ function Live2d() {
       localStorage.removeItem("live2d-display");
       sessionStorage.removeItem("live2d-text");
       document.body.insertAdjacentHTML(
-        "beforeend",
-        `<div id="live2d-plugin">
+              "beforeend",
+              `<div id="live2d-plugin">
             <div id="live2d-tips"></div>
             <canvas id="live2d" width="800" height="800"></canvas>
             <div id="live2d-tool"></div>
@@ -126,8 +126,8 @@ function Live2d() {
     #registerEventListener(result) {
       // 检测用户活动状态，并在空闲时显示消息
       let userAction = false,
-        userActionTimer,
-        messageArray = result.message.default;
+              userActionTimer,
+              messageArray = result.message.default;
       window.addEventListener("mousemove", () => (userAction = true));
       window.addEventListener("keydown", () => (userAction = true));
       setInterval(() => {
@@ -165,13 +165,13 @@ function Live2d() {
       });
       result["seasons"].forEach(({ date, text }) => {
         const now = new Date(),
-          after = date.split("-")[0],
-          before = date.split("-")[1] || after;
+                after = date.split("-")[0],
+                before = date.split("-")[1] || after;
         if (
-          after.split("/")[0] <= now.getMonth() + 1 &&
-          now.getMonth() + 1 <= before.split("/")[0] &&
-          after.split("/")[1] <= now.getDate() &&
-          now.getDate() <= before.split("/")[1]
+                after.split("/")[0] <= now.getMonth() + 1 &&
+                now.getMonth() + 1 <= before.split("/")[0] &&
+                after.split("/")[1] <= now.getDate() &&
+                now.getDate() <= before.split("/")[1]
         ) {
           text = util.randomSelection(text);
           text = text.replace("{year}", now.getFullYear());
@@ -210,39 +210,39 @@ function Live2d() {
         modelId = this.#config["modelId"] || 1; // 模型 ID
         modelTexturesId = this.#config["modelTexturesId"] || 53; // 材质 ID
       }
-      
+
       if (this.#config["consoleShowStatu"]) {
         eval(
-          (function (p, a, c, k, e, r) {
-            e = function (c) {
-              return (
-                (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
-              );
-            };
-            if (!"".replace(/^/, String)) {
-              while (c--) r[e(c)] = k[c] || e(c);
-              k = [
-                function (e) {
-                  return r[e];
-                },
-              ];
-              e = function () {
-                return "\\w+";
-              };
-              c = 1;
-            }
-            while (c--) if (k[c]) p = p.replace(new RegExp("\\b" + e(c) + "\\b", "g"), k[c]);
-            return p;
-          })(
-            "8.d(\" \");8.d(\"\\U,.\\y\\5.\\1\\1\\1\\1/\\1,\\u\\2 \\H\\n\\1\\1\\1\\1\\1\\b ', !-\\r\\j-i\\1/\\1/\\g\\n\\1\\1\\1 \\1 \\a\\4\\f'\\1\\1\\1 L/\\a\\4\\5\\2\\n\\1\\1 \\1 /\\1 \\a,\\1 /|\\1 ,\\1 ,\\1\\1\\1 ',\\n\\1\\1\\1\\q \\1/ /-\\j/\\1\\h\\E \\9 \\5!\\1 i\\n\\1\\1\\1 \\3 \\6 7\\q\\4\\c\\1 \\3'\\s-\\c\\2!\\t|\\1 |\\n\\1\\1\\1\\1 !,/7 '0'\\1\\1 \\X\\w| \\1 |\\1\\1\\1\\n\\1\\1\\1\\1 |.\\x\\\"\\1\\l\\1\\1 ,,,, / |./ \\1 |\\n\\1\\1\\1\\1 \\3'| i\\z.\\2,,A\\l,.\\B / \\1.i \\1|\\n\\1\\1\\1\\1\\1 \\3'| | / C\\D/\\3'\\5,\\1\\9.\\1|\\n\\1\\1\\1\\1\\1\\1 | |/i \\m|/\\1 i\\1,.\\6 |\\F\\1|\\n\\1\\1\\1\\1\\1\\1.|/ /\\1\\h\\G \\1 \\6!\\1\\1\\b\\1|\\n\\1\\1\\1 \\1 \\1 k\\5>\\2\\9 \\1 o,.\\6\\2 \\1 /\\2!\\n\\1\\1\\1\\1\\1\\1 !'\\m//\\4\\I\\g', \\b \\4'7'\\J'\\n\\1\\1\\1\\1\\1\\1 \\3'\\K|M,p,\\O\\3|\\P\\n\\1\\1\\1\\1\\1 \\1\\1\\1\\c-,/\\1|p./\\n\\1\\1\\1\\1\\1 \\1\\1\\1'\\f'\\1\\1!o,.:\\Q \\R\\S\\T v\"+e.V+\" / W \"+e.N);8.d(\" \");",
-            60,
-            60,
-            "|u3000|uff64|uff9a|uff40|u30fd|uff8d||console|uff8a|uff0f|uff3c|uff84|log|this.#config|uff70|u00b4|uff49||u2010||u3000_|u3008||_|___|uff72|u2500|uff67|u30cf|u30fc||u30bd|u4ece|u30d8|uff1e|__|u30a4|k_|uff17_|u3000L_|u3000i|uff1a|u3009|uff34|uff70r|u30fdL__||___i|updateTime|u30f3|u30ce|nLive2D|u770b|u677f|u5a18|u304f__|version|LIlGG|u00b40i".split(
-              "|"
-            ),
-            0,
-            {}
-          )
+                (function (p, a, c, k, e, r) {
+                  e = function (c) {
+                    return (
+                            (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
+                    );
+                  };
+                  if (!"".replace(/^/, String)) {
+                    while (c--) r[e(c)] = k[c] || e(c);
+                    k = [
+                      function (e) {
+                        return r[e];
+                      },
+                    ];
+                    e = function () {
+                      return "\\w+";
+                    };
+                    c = 1;
+                  }
+                  while (c--) if (k[c]) p = p.replace(new RegExp("\\b" + e(c) + "\\b", "g"), k[c]);
+                  return p;
+                })(
+                        "8.d(\" \");8.d(\"\\U,.\\y\\5.\\1\\1\\1\\1/\\1,\\u\\2 \\H\\n\\1\\1\\1\\1\\1\\b ', !-\\r\\j-i\\1/\\1/\\g\\n\\1\\1\\1 \\1 \\a\\4\\f'\\1\\1\\1 L/\\a\\4\\5\\2\\n\\1\\1 \\1 /\\1 \\a,\\1 /|\\1 ,\\1 ,\\1\\1\\1 ',\\n\\1\\1\\1\\q \\1/ /-\\j/\\1\\h\\E \\9 \\5!\\1 i\\n\\1\\1\\1 \\3 \\6 7\\q\\4\\c\\1 \\3'\\s-\\c\\2!\\t|\\1 |\\n\\1\\1\\1\\1 !,/7 '0'\\1\\1 \\X\\w| \\1 |\\1\\1\\1\\n\\1\\1\\1\\1 |.\\x\\\"\\1\\l\\1\\1 ,,,, / |./ \\1 |\\n\\1\\1\\1\\1 \\3'| i\\z.\\2,,A\\l,.\\B / \\1.i \\1|\\n\\1\\1\\1\\1\\1 \\3'| | / C\\D/\\3'\\5,\\1\\9.\\1|\\n\\1\\1\\1\\1\\1\\1 | |/i \\m|/\\1 i\\1,.\\6 |\\F\\1|\\n\\1\\1\\1\\1\\1\\1.|/ /\\1\\h\\G \\1 \\6!\\1\\1\\b\\1|\\n\\1\\1\\1 \\1 \\1 k\\5>\\2\\9 \\1 o,.\\6\\2 \\1 /\\2!\\n\\1\\1\\1\\1\\1\\1 !'\\m//\\4\\I\\g', \\b \\4'7'\\J'\\n\\1\\1\\1\\1\\1\\1 \\3'\\K|M,p,\\O\\3|\\P\\n\\1\\1\\1\\1\\1 \\1\\1\\1\\c-,/\\1|p./\\n\\1\\1\\1\\1\\1 \\1\\1\\1'\\f'\\1\\1!o,.:\\Q \\R\\S\\T v\"+e.V+\" / W \"+e.N);8.d(\" \");",
+                        60,
+                        60,
+                        "|u3000|uff64|uff9a|uff40|u30fd|uff8d||console|uff8a|uff0f|uff3c|uff84|log|this.#config|uff70|u00b4|uff49||u2010||u3000_|u3008||_|___|uff72|u2500|uff67|u30cf|u30fc||u30bd|u4ece|u30d8|uff1e|__|u30a4|k_|uff17_|u3000L_|u3000i|uff1a|u3009|uff34|uff70r|u30fdL__||___i|updateTime|u30f3|u30ce|nLive2D|u770b|u677f|u5a18|u304f__|version|LIlGG|u00b40i".split(
+                                "|"
+                        ),
+                        0,
+                        {}
+                )
         );
       }
       model.loadModel(modelId, modelTexturesId);
@@ -259,25 +259,25 @@ function Live2d() {
       let config = this.#config;
       return new Promise((resolve) => {
         Promise.all([util.loadTipsResource(config["themeTipsPath"]), util.loadTipsResource(config["tipsPath"])]).then(
-          (result) => {
-            // 后台配置 tips，其中包含 mouseover 及 click 两种配置，以及单独配置的 message
-            let configTips = util.backendConfigConvert(config);
-            // 主题设置 tips，其中包含 mouseover 及 click 两种配置（会过滤掉其他配置）
-            let themeTips = {
-              click: result[0]["click"] || [],
-              mouseover: result[0]["mouseover"] || [],
-            };
-            // 配置的 tips 文件，包含所有属性 （click, mouseover, seasons, time, message）
-            let defaultTips = result[1];
-            // 若配置的 tips 文件不存在，则回退到默认 tips
-            if (Object.keys(defaultTips).length === 0) {
-              util.loadTipsResource(this.defaultConfig.tipsPath).then((tips) => {
-                resolve(util.mergeTips(configTips, themeTips, tips));
-              });
-            } else {
-              resolve(util.mergeTips(configTips, themeTips, defaultTips));
-            }
-          }
+                (result) => {
+                  // 后台配置 tips，其中包含 mouseover 及 click 两种配置，以及单独配置的 message
+                  let configTips = util.backendConfigConvert(config);
+                  // 主题设置 tips，其中包含 mouseover 及 click 两种配置（会过滤掉其他配置）
+                  let themeTips = {
+                    click: result[0]["click"] || [],
+                    mouseover: result[0]["mouseover"] || [],
+                  };
+                  // 配置的 tips 文件，包含所有属性 （click, mouseover, seasons, time, message）
+                  let defaultTips = result[1];
+                  // 若配置的 tips 文件不存在，则回退到默认 tips
+                  if (Object.keys(defaultTips).length === 0) {
+                    util.loadTipsResource(this.defaultConfig.tipsPath).then((tips) => {
+                      resolve(util.mergeTips(configTips, themeTips, tips));
+                    });
+                  } else {
+                    resolve(util.mergeTips(configTips, themeTips, defaultTips));
+                  }
+                }
         );
       });
     }
@@ -303,36 +303,36 @@ function Live2d() {
       localStorage.setItem("modelTexturesId", modelTexturesId);
       message.showMessage(text, 4000, 3);
       loadlive2d(
-        "live2d",
-        `${this.#apiPath}get/?id=${modelId}-${modelTexturesId}`,
-        this.#config["consoleShowStatu"] === true
-          ? console.log(`[Status] Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`)
-          : null
+              "live2d",
+              `${this.#apiPath}get/?id=${modelId}-${modelTexturesId}`,
+              this.#config["consoleShowStatu"] === true
+                      ? console.log(`[Status] Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`)
+                      : null
       );
     }
 
     async loadRandModel() {
       const modelId = Number(localStorage.getItem("modelId")),
-        modelTexturesId = Number(localStorage.getItem("modelTexturesId"));
+              modelTexturesId = Number(localStorage.getItem("modelTexturesId"));
       // 可选 "rand"(随机), "switch"(顺序)
       fetch(`${this.#apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
-        .then((response) => response.json())
-        .then((result) => {
-          if (result["textures"]["id"] === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) {
-            message.showMessage("我还没有其他衣服呢！", 4000, 3);
-          } else {
-            this.loadModel(modelId, result["textures"]["id"], "我的新衣服好看嘛？");
-          }
-        });
+              .then((response) => response.json())
+              .then((result) => {
+                if (result["textures"]["id"] === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) {
+                  message.showMessage("我还没有其他衣服呢！", 4000, 3);
+                } else {
+                  this.loadModel(modelId, result["textures"]["id"], "我的新衣服好看嘛？");
+                }
+              });
     }
 
     async loadOtherModel() {
       let modelId = Number(localStorage.getItem("modelId"));
       fetch(`${this.#apiPath}switch/?id=${modelId}`)
-        .then((response) => response.json())
-        .then((result) => {
-          this.loadModel(result.model.id, 0, result.model.message);
-        });
+              .then((response) => response.json())
+              .then((result) => {
+                this.loadModel(result.model.id, 0, result.model.message);
+              });
     }
   }
 
@@ -386,13 +386,13 @@ function Live2d() {
         resolve(defaultObj);
       }
       fetch(url)
-        .then((response) => response.json())
-        .then((result) => {
-          resolve(result);
-        })
-        .catch(() => {
-          resolve(defaultObj);
-        });
+              .then((response) => response.json())
+              .then((result) => {
+                resolve(result);
+              })
+              .catch(() => {
+                resolve(defaultObj);
+              });
     });
   };
 
@@ -505,6 +505,10 @@ function Live2d() {
    */
   message.createStreamMessage = function (timeout, showTimeout) {
     const priority = 99999;
+    const tips = document.getElementById("live2d-tips");
+
+    // 新增：存储原始底部位置
+    const originalBottom = parseInt(window.getComputedStyle(tips).bottom) || 100;
 
     const updateTimer = function (time) {
       if (this.messageTimer) {
@@ -518,23 +522,26 @@ function Live2d() {
     };
 
     sessionStorage.setItem("live2d-priority", priority);
-    const tips = document.getElementById("live2d-tips");
     tips.innerHTML = "";
     tips.classList.add("live2d-tips-active");
     updateTimer(timeout);
 
     const sendMessage = function (text) {
       tips.innerHTML += text;
+
+      // 新增：自动滚动到底部
+      tips.scrollTop = tips.scrollHeight;
+
+      // 新增：动态调整位置
+      const viewportHeight = window.innerHeight;
+      const tipsHeight = tips.offsetHeight;
     };
 
     const stop = function () {
       updateTimer(showTimeout);
     };
 
-    return {
-      sendMessage,
-      stop,
-    };
+    return { sendMessage, stop };
   };
 
   /**
@@ -780,11 +787,11 @@ function Live2d() {
             break;
         }
         document
-          .getElementById("live2d-tool")
-          .insertAdjacentHTML(
-            "beforeend",
-            `<span id="live2d-tool-${tool}"><i class="iconify" data-icon="${icon}" data-width="20" data-height="20"></i></span>`
-          );
+                .getElementById("live2d-tool")
+                .insertAdjacentHTML(
+                        "beforeend",
+                        `<span id="live2d-tool-${tool}"><i class="iconify" data-icon="${icon}" data-width="20" data-height="20"></i></span>`
+                );
         document.getElementById(`live2d-tool-${tool}`).addEventListener("click", callback);
       }
     }
@@ -864,8 +871,8 @@ function Live2d() {
     const reader = response.body.getReader();
     const textDecoder = new TextDecoder();
     const chat = message.createStreamMessage(
-      Number(config["chunkTimeout"] || 60) * 1000,
-      Number(config["showChatMessageTimeout"] || 10) * 1000
+            Number(config["chunkTimeout"] || 60) * 1000,
+            Number(config["showChatMessageTimeout"] || 10) * 1000
     );
 
     document.getElementById("send").style.display = "block";
@@ -930,8 +937,8 @@ function Live2d() {
       return;
     }
     document.body.insertAdjacentHTML(
-      "beforeend",
-      `<div id="live2d-chat-model">
+            "beforeend",
+            `<div id="live2d-chat-model">
         <div class="live2d-chat-model-body">
            <div class="live2d-chat-content">
              <input id="live2d-chat-input" type="text" required autofocus="autofocus" />
